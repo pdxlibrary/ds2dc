@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="digitalcommons-document-import.xsd">
+  <% @documents.each do |document| %>
+  <document>
+    <title><%= document.title %></title>
+    <publication-date><%= document.publication_date %></publication-date>
+    <authors>
+      <%- document.authors.each do |a| -%>
+      <author xsi:type="individual">
+        <lname><%= a.last_name %></lname>
+        <fname><%= a.first_name %></fname>
+        <%- if a.middle_name -%>
+        <mname><%= a.middle_name %></mname>
+        <%- end -%>
+        <%- if a.institution -%>
+        <institution><%= a.institution %></institution>
+        <%- end -%>
+        <%- if a.email -%>
+        <email><%= a.email %></email>
+        <%- end -%>
+      </author>
+      <%- end -%>
+    </authors>
+    <abstract><%= document.abstract %></abstract>
+    <%- if document.fulltext_url -%>
+    <fulltext-url><%= document.fulltext_url %></fulltext-url>
+    <%- end -%>
+  </document>
+  <% end %>
+</documents>
+
