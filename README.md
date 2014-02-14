@@ -5,7 +5,7 @@ This is the process we followed for each DSpace Collection that was to be migrat
 
 ### Prerequisites
 - A web server that is configured to allow access to the IP range for Digital Commons servers (72.5.9.0/255.255.255.0)
-- Ruby (I used 1.8)
+- Ruby and the bundler gem
 - Command-line access to your DSpace server
 
 
